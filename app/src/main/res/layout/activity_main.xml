@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#3F51B5"
+    android:keepScreenOn="true">
+
+
+    <TextView
+        android:id="@+id/programar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Frecuencia en minutos: "
+        android:textColor="@color/blank"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:padding="10dp"
+        android:textSize="25sp"
+        android:visibility="invisible"/>
+    <EditText
+        android:textAlignment="center"
+        android:inputType="number"
+        android:layout_marginTop="40dp"
+        android:id="@+id/frecuenciTxt"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@id/programar"
+        android:textColor="@color/blank"
+        android:visibility="invisible"/>
+    <TextView
+        android:id="@+id/fre_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(frec)"
+        android:textColor="@color/blank"
+        android:textSize="25sp"
+        android:layout_toRightOf="@+id/programar"
+        android:layout_marginTop="40dp"
+        android:visibility="invisible" />
+    <View
+        android:id="@+id/superior"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="#FF00FF00" />
+    <TextView
+        android:id="@+id/inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Inicio"
+        android:textColor="@color/blank"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/superior"
+        android:padding="10dp"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/nivelBateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nivel inicial de Batería:"
+        android:textColor="@color/blank"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/inicio"
+        android:padding="10dp"
+        android:textSize="17sp"/>
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/nivelBateriaTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blank"
+        android:layout_below="@id/inicio"
+        android:layout_marginLeft="70dp"
+        android:layout_toRightOf="@id/nivelBateria"
+        android:padding="10dp"
+        android:textSize="20sp"/>
+    <TextView
+        android:id="@+id/hora"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hora inicial:"
+        android:textColor="@color/blank"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/nivelBateria"
+        android:padding="10dp"
+        android:textSize="17sp"/>
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/horaTxt"
+        android:layout_width="221dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/nivelBateriaTxt"
+        android:layout_marginLeft="153dp"
+        android:layout_toRightOf="@+id/hora"
+        android:padding="10dp"
+        android:textColor="@color/blank"
+        android:textSize="20sp" />
+    <View
+        android:layout_below="@+id/horaTxt"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="#FF00FF00" />
+
+    <TextView
+        android:id="@+id/informacion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Información de prueba"
+        android:textColor="@color/blank"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@id/hora"
+        android:padding="10dp"
+        android:textSize="25sp"/>
+    <TextView
+        android:id="@+id/nivelActualBateria"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nivel actual de batería:"
+        android:textColor="@color/blank"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/progressBar"
+        android:padding="10dp"
+        android:textSize="17sp"/>
+    <TextView
+        android:layout_alignParentRight="true"
+        android:id="@+id/nivelActualBateriaTxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="(nivelbateria)"
+        android:textColor="@color/blank"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="70dp"
+        android:layout_below="@id/progressBar"
+        android:layout_toRightOf="@+id/nivelActualBateria"
+        android:padding="10dp"
+        android:textSize="25dp"/>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:max="100"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:layout_below="@+id/informacion"
+        />
+    <TextView
+        android:id="@+id/tiempoTranscurrido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tiempo transcurrido:"
+        android:textColor="@color/blank"
+        android:layout_marginLeft="40dp"
+        android:layout_below="@id/nivelActualBateria"
+        android:padding="10dp"
+        android:textSize="17sp"/>
+
+    <Chronometer
+        android:layout_alignParentRight="true"
+        android:id="@+id/chronometertxt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/blank"
+        android:layout_marginLeft="86dp"
+        android:layout_below="@id/nivelActualBateria"
+        android:layout_toRightOf="@+id/tiempoTranscurrido"
+        android:padding="10dp"
+        android:textSize="25sp"/>
+
+
+    <View
+        android:layout_below="@+id/chronometertxt"
+        android:layout_width="fill_parent"
+        android:layout_height="2dip"
+        android:background="#FF00FF00" />
+
+    <Button
+        android:id="@+id/buttonIniciar"
+        android:layout_width="fill_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:padding="10dp"
+        android:textColor="@color/blank"
+        android:background="#FE0000"
+        android:layout_marginBottom="10dp"
+        android:textSize="25sp"
+        android:text="Iniciar prueba"/>
+
+</RelativeLayout>

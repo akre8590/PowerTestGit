@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">PowerTest</string>
+    <string name="battery_level">Nivel de Batería:</string>
+</resources>
