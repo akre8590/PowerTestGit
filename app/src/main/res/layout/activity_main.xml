@@ -60,7 +60,7 @@
         android:layout_height="wrap_content"
         android:text="Nivel inicial de Batería:"
         android:textColor="@color/blank"
-        android:layout_marginLeft="40dp"
+
         android:layout_below="@id/inicio"
         android:padding="10dp"
         android:textSize="17sp"/>
@@ -71,7 +71,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/blank"
         android:layout_below="@id/inicio"
-        android:layout_marginLeft="70dp"
+
         android:layout_toRightOf="@id/nivelBateria"
         android:padding="10dp"
         android:textSize="20sp"/>
@@ -81,7 +81,7 @@
         android:layout_height="wrap_content"
         android:text="Hora inicial:"
         android:textColor="@color/blank"
-        android:layout_marginLeft="40dp"
+
         android:layout_below="@id/nivelBateria"
         android:padding="10dp"
         android:textSize="17sp"/>
@@ -91,7 +91,7 @@
         android:layout_width="221dp"
         android:layout_height="wrap_content"
         android:layout_below="@id/nivelBateriaTxt"
-        android:layout_marginLeft="153dp"
+
         android:layout_toRightOf="@+id/hora"
         android:padding="10dp"
         android:textColor="@color/blank"
@@ -120,7 +120,7 @@
         android:text="Nivel actual de batería:"
         android:textColor="@color/blank"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="40dp"
+
         android:layout_below="@id/progressBar"
         android:padding="10dp"
         android:textSize="17sp"/>
@@ -132,7 +132,7 @@
         android:text="(nivelbateria)"
         android:textColor="@color/blank"
         android:layout_marginTop="20dp"
-        android:layout_marginLeft="70dp"
+
         android:layout_below="@id/progressBar"
         android:layout_toRightOf="@+id/nivelActualBateria"
         android:padding="10dp"
@@ -154,7 +154,7 @@
         android:layout_height="wrap_content"
         android:text="Tiempo transcurrido:"
         android:textColor="@color/blank"
-        android:layout_marginLeft="40dp"
+
         android:layout_below="@id/nivelActualBateria"
         android:padding="10dp"
         android:textSize="17sp"/>
@@ -165,7 +165,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textColor="@color/blank"
-        android:layout_marginLeft="86dp"
+
         android:layout_below="@id/nivelActualBateria"
         android:layout_toRightOf="@+id/tiempoTranscurrido"
         android:padding="10dp"

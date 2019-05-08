@@ -110,7 +110,7 @@ public class MainActivity extends Activity {
                 int frec;
                 //frec = Integer.parseInt(frecuencia.getText().toString());
                 startJobTask();
-                startJobNotification();
+                //startJobNotification();
                 startChronometer();
                 levelBattery();
                 horaInicial();
@@ -153,12 +153,20 @@ public class MainActivity extends Activity {
         chronometer.setOnChronometerTickListener(new Chronometer.OnChronometerTickListener() {
             @Override
             public void onChronometerTick(Chronometer chronometer) {
-                if( chronometer.getText().toString().equalsIgnoreCase("8:00:00")){
-                    Toast.makeText(MainActivity.this, "Periodo de prueba concluido", Toast.LENGTH_LONG).show();
+                //if( chronometer.getText().toString().equalsIgnoreCase("8:00:00")){
+                if( chronometer.getText().toString().equalsIgnoreCase("05:00")){
+                    Toast.makeText(MainActivity.this, "Primer periodo", Toast.LENGTH_LONG).show();
+                    //chronometer.stop();
+                    //mBatteryLevelText.setText(String.valueOf(getBatteryPercentage(MainActivity.this)) + "%");
+                    //mBatteryLevelProgress.setProgress(getBatteryPercentage(MainActivity.this));
+                    playRingtone();
+                } else if (chronometer.getText().toString().equalsIgnoreCase("10:00")){
+                    Toast.makeText(MainActivity.this, "Segundo periodo", Toast.LENGTH_LONG).show();
+                    playRingtone();
+                }else if (chronometer.getText().toString().equalsIgnoreCase("15:00")){
+                    Toast.makeText(MainActivity.this, "Final", Toast.LENGTH_LONG).show();
+                    playRingtone();
                     chronometer.stop();
-                    mBatteryLevelText.setText(String.valueOf(getBatteryPercentage(MainActivity.this)) + "%");
-                    mBatteryLevelProgress.setProgress(getBatteryPercentage(MainActivity.this));
-                    playAlarm();
                 }
             }
         });
@@ -177,6 +185,16 @@ public class MainActivity extends Activity {
         Uri uri = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_RINGTONE);
         Ringtone ringtone = RingtoneManager.getRingtone(getApplicationContext(),uri);
         ringtone.play();
+
+    }
+    public void playRingtone(){
+        try {
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
     public void checkLowLevelBattery(){
         int levelLowBattery;
@@ -221,7 +239,7 @@ public class MainActivity extends Activity {
     }
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     public void startJobNotification(){
-        final long REFRESH_INTERVAL  = 60 * 30 * 1000; // 30min
+        final long REFRESH_INTERVAL  = 60 * 1000; // 30min
         ComponentName componentName = new ComponentName(MainActivity.this, NotificationServices.class);
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N){
@@ -240,7 +258,7 @@ public class MainActivity extends Activity {
                     .setRequiresCharging(true)
                     .setRequiredNetworkType(JobInfo.NETWORK_TYPE_UNMETERED)
                     .setPersisted(true)
-                    .setPeriodic(MINUTES.toMillis(30))
+                    .setPeriodic(MINUTES.toMillis(1))
                     .build();
             JobScheduler scheduler = (JobScheduler)getSystemService(JOB_SCHEDULER_SERVICE);
             int resultCode = scheduler.schedule(info);
